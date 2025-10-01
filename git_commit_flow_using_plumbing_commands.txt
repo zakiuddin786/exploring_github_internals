@@ -1,0 +1,81 @@
+ec2-user@ip-172-31-5-253 ~]$ mkdir plumbing
+[ec2-user@ip-172-31-5-253 ~]$ cd plumbing/
+[ec2-user@ip-172-31-5-253 plumbing]$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /home/ec2-user/plumbing/.git/
+[ec2-user@ip-172-31-5-253 plumbing]$ echo "plumbiong" > test.txt
+[ec2-user@ip-172-31-5-253 plumbing]$ echo "plumbiong" > testing.txt
+[ec2-user@ip-172-31-5-253 plumbing]$ echo "plumbiong" | git hash-object -w --stdin
+46129fa964314b3a69e5f7bdf9eca9f919b02d58
+[ec2-user@ip-172-31-5-253 plumbing]$ git update-index --ad --cacheinfo 100644 46129fa964314b3a69e5f7bdf9eca9f919b02d58 test
+[ec2-user@ip-172-31-5-253 plumbing]$ git update-index --ad --cacheinfo 100644 46129fa964314b3a69e5f7bdf9eca9f919b02d58 test.txt
+[ec2-user@ip-172-31-5-253 plumbing]$ tree_hash=$(git write-tree)
+[ec2-user@ip-172-31-5-253 plumbing]$ echo $tree_hash 
+a027976356c81c9abec6667f6ad6278096f80a1e
+[ec2-user@ip-172-31-5-253 plumbing]$ git log
+fatal: your current branch 'master' does not have any commits yet
+[ec2-user@ip-172-31-5-253 plumbing]$ commit_hash=$(echo "using plumbing command" | git commit-tree$tree_hash)
+git: 'commit-treea027976356c81c9abec6667f6ad6278096f80a1e' is not a git command. See 'git --help'.
+[ec2-user@ip-172-31-5-253 plumbing]$ commit_hash=$(echo "using plumbing command" | git commit-tree $tree_hash)
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+[ec2-user@ip-172-31-5-253 plumbing]$ echo $commit_hash 
+99b8624d12f31a49f027f51368e3014068c17cc0
+[ec2-user@ip-172-31-5-253 plumbing]$ git log
+fatal: your current branch 'master' does not have any commits yet
+[ec2-user@ip-172-31-5-253 plumbing]$ git update-ref HEAD $commit_hash
+[ec2-user@ip-172-31-5-253 plumbing]$ git log
+commit 99b8624d12f31a49f027f51368e3014068c17cc0 (HEAD -> master)
+Author: Mohammed Zakiuddin <zakiuddin321@gmail.com>
+Date:   Wed Oct 1 13:52:08 2025 +0000
+
+    using plumbing command
+[ec2-user@ip-172-31-5-253 plumbing]$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    test
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        testing.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[ec2-user@ip-172-31-5-253 plumbing]$ 
+
+[ec2-user@ip-172-31-5-253 plumbing]$ git remote add origin https://github.com/zakiuddin786/exploring_github_internals.git
+git branch -M main
+git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 239 bytes | 239.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/zakiuddin786/exploring_github_internals.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+[ec2-user@ip-172-31-5-253 plumbing]$ 
