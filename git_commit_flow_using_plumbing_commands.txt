@@ -1,5 +1,5 @@
 ec2-user@ip-172-31-5-253 ~]$ mkdir plumbing This will cause a conflict
-[ec2-user@ip-172-This is modified here253 ~]$ cd plumbing/
+[ec2-user@ip-172-This is modified here253 ~]$ cd umbing/
 [ec2-user@ip-172-31-5-253 plumbing]$ git init
 hint: Using 'master' as the name for the initial branch. This default branch name
 hint: is subject to change. To configure the initial branch name to use in all
