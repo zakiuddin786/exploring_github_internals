@@ -5,3 +5,6 @@ New commit
 This change is made in rebase
 
 This is an extra commit 
+
+
+This is a new feature
