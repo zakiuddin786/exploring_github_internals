@@ -6,5 +6,6 @@ This change is made in rebase
 
 This is an extra commit 
 
+This is the latest feature
 
 This is a new feature
